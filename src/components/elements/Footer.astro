@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import LogoSvg from "/public/images/logo.svg";
+
+import { footerLinks } from "../../constants/index";
+---
+
+<footer class="flex flex-col  mt-5 border-t border-gray-100">
+    <div
+        class="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
+        <div class="flex flex-col justify-start items-start gap-6">
+            <Image src={LogoSvg} alt="logo" width={118} height={18} />
+
+            <p class="text-base text-secondary-foreground">
+                Carhub 2023 <br />
+                 All rights reserved &copy;
+            </p>
+        </div>
+
+        <div class="footer__links">
+            {
+                footerLinks.map((link) => (
+                    <div class="footer__link">
+                        <h3 class="font-bold">{link.title}</h3>
+
+                        {link.links.map((item) => (
+                            <a href={item.url} class="text-secondary-foreground">
+                                {item.title}
+                            </a>
+                        ))}
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+
+    <div
+        class="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
+        <p>@2023 CarHub. All rights reserved</p>
+
+        <div class="footer__copyrights-link">
+            <a href="/">Privacy & Policy</a>
+            <a href="/">Terms & Condition</a>
+        </div>
+    </div>
+</footer>

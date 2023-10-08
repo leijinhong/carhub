@@ -1,0 +1,22 @@
+---
+import SearchBar from "../elements/SearchBar";
+import CustomFilter from "../shared/CustomFilter";
+---
+
+<!-- 汽车目录 -->
+<section class="mt-12 padding-x padding-y max-width" id="discover">
+    <div class="home__text-container">
+        <h1 class="text-4xl font-extrabold">Car Catalogue</h1>
+        <p>Explore the cars you might like</p>
+    </div>
+
+    <!-- 过滤器 -->
+    <div class="home__filters">
+        <SearchBar client:load />
+
+        <div class="home__filter-container">
+            <CustomFilter title="Fuel" client:load />
+            <CustomFilter title="Year" client:load />
+        </div>
+    </div>
+</section>
